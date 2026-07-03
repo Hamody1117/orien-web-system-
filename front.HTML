@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orien · Login</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="front.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Brand Section -->
+        <div class="brand-section">
+            <div class="brand-content">
+                <h1 class="logo">Orien</h1>
+                <p class="tagline">Simple task tracking for software teams</p>
+                <div class="features">
+                    <div class="feature-item"><span class="check-icon">✓</span><span>Track project progress</span></div>
+                    <div class="feature-item"><span class="check-icon">✓</span><span>Assign tasks to team members</span></div>
+                    <div class="feature-item"><span class="check-icon">✓</span><span>Real-time updates</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="form-section">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2>Welcome back</h2>
+                    <p>Please enter your details to continue</p>
+                </div>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="password" placeholder="Enter your password" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="login-btn" id="loginBtn">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBFV2NXxa0QHCld-KXjfkapL7AuC6RFnec",
+            authDomain: "orien-7c882.firebaseapp.com",
+            projectId: "orien-7c882",
+            storageBucket: "orien-7c882.firebasestorage.app",
+            messagingSenderId: "763247960140",
+            appId: "1:763247960140:web:2ef083fa1e1f9b7fdad4e9"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        window.auth = firebase.auth();
+        window.db = firebase.firestore();
+        console.log('🔥 Firebase ready');
+    </script>
+
+    <script>
+        // تسجيل الدخول
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const btn = document.getElementById('loginBtn');
+
+            if (!email || !password) {
+                alert('Please enter email and password');
+                return;
+            }
+
+            btn.classList.add('loading');
+            btn.textContent = 'Loading...';
+
+            try {
+                await window.auth.signInWithEmailAndPassword(email, password);
+                btn.textContent = '✅ Success!';
+                window.location.href = 'web.html';
+            } catch (error) {
+                alert('❌ Login failed: ' + error.message);
+                btn.classList.remove('loading');
+                btn.textContent = 'Sign in';
+            }
+        });
+    </script>
+</body>
+</html>
