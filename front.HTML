@@ -8,6 +8,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="front.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore-compat.js"></script>
+    
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBFV2NXxa0QHCld-KXjfkapL7AuC6RFnec",
+            authDomain: "orien-7c882.firebaseapp.com",
+            projectId: "orien-7c882",
+            storageBucket: "orien-7c882.firebasestorage.app",
+            messagingSenderId: "763247960140",
+            appId: "1:763247960140:web:2ef083fa1e1f9b7fdad4e9"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        window.auth = firebase.auth();
+        window.db = firebase.firestore();
+        console.log('🔥 Firebase ready');
+    </script>
 </head>
 <body>
     <div class="container">
@@ -34,70 +55,208 @@
 
                 <form id="loginForm">
                     <div class="form-group">
-                        <label for="email">Email address</label>
+                        <label for="loginEmail">Email address</label>
                         <div class="input-wrapper">
-                            <input type="email" id="email" placeholder="Enter your email" required>
+                            <input type="email" id="loginEmail" placeholder="Enter your email" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="loginPassword">Password</label>
                         <div class="input-wrapper">
-                            <input type="password" id="password" placeholder="Enter your password" required>
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
                         </div>
                     </div>
 
+                    <!-- Sign In Button -->
                     <button type="submit" class="login-btn" id="loginBtn">Sign in</button>
+
+                    <!-- Divider -->
+                    <div class="divider">
+                        <span>or</span>
+                    </div>
+
+                    <!-- Create Account Button -->
+                    <button type="button" class="signup-btn" id="openSignupBtn">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore-compat.js"></script>
+    <!-- ============================================================ -->
+    <!-- ===== MODAL: Create Account ===== -->
+    <!-- ============================================================ -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Account</h3>
+                <button class="close-btn" id="closeSignupModal">&times;</button>
+            </div>
+
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" placeholder="e.g., John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupEmail">Email address</label>
+                    <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="Min 6 characters" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupConfirm">Confirm Password</label>
+                    <input type="password" id="signupConfirm" placeholder="Re-enter your password" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelSignupBtn">Cancel</button>
+                    <button type="submit" class="btn-primary" id="signupSubmitBtn">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
 
     <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyBFV2NXxa0QHCld-KXjfkapL7AuC6RFnec",
-            authDomain: "orien-7c882.firebaseapp.com",
-            projectId: "orien-7c882",
-            storageBucket: "orien-7c882.firebasestorage.app",
-            messagingSenderId: "763247960140",
-            appId: "1:763247960140:web:2ef083fa1e1f9b7fdad4e9"
-        };
+        // ============================================
+        // ===== عناصر DOM =====
+        // ============================================
+        const loginForm = document.getElementById('loginForm');
+        const loginEmail = document.getElementById('loginEmail');
+        const loginPassword = document.getElementById('loginPassword');
+        const loginBtn = document.getElementById('loginBtn');
 
-        firebase.initializeApp(firebaseConfig);
-        window.auth = firebase.auth();
-        window.db = firebase.firestore();
-        console.log('🔥 Firebase ready');
-    </script>
+        const openSignupBtn = document.getElementById('openSignupBtn');
+        const closeSignupBtn = document.getElementById('closeSignupModal');
+        const cancelSignupBtn = document.getElementById('cancelSignupBtn');
+        const signupModal = document.getElementById('signupModal');
+        const overlay = document.getElementById('overlay');
+        const signupForm = document.getElementById('signupForm');
+        const signupName = document.getElementById('signupName');
+        const signupEmail = document.getElementById('signupEmail');
+        const signupPassword = document.getElementById('signupPassword');
+        const signupConfirm = document.getElementById('signupConfirm');
+        const signupSubmitBtn = document.getElementById('signupSubmitBtn');
 
-    <script>
-        // تسجيل الدخول
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+        // ============================================
+        // ===== فتح وإغلاق Modal =====
+        // ============================================
+        function openModal() {
+            signupModal.classList.add('active');
+            overlay.classList.add('active');
+        }
+
+        function closeModal() {
+            signupModal.classList.remove('active');
+            overlay.classList.remove('active');
+            signupForm.reset();
+        }
+
+        openSignupBtn.addEventListener('click', openModal);
+        closeSignupBtn.addEventListener('click', closeModal);
+        cancelSignupBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
+
+        // ============================================
+        // ===== تسجيل الدخول =====
+        // ============================================
+        loginForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const btn = document.getElementById('loginBtn');
+            const email = loginEmail.value;
+            const password = loginPassword.value;
 
             if (!email || !password) {
                 alert('Please enter email and password');
                 return;
             }
 
-            btn.classList.add('loading');
-            btn.textContent = 'Loading...';
+            loginBtn.classList.add('loading');
+            loginBtn.textContent = 'Loading...';
 
             try {
                 await window.auth.signInWithEmailAndPassword(email, password);
-                btn.textContent = '✅ Success!';
+                loginBtn.textContent = '✅ Success!';
                 window.location.href = 'web.html';
             } catch (error) {
                 alert('❌ Login failed: ' + error.message);
-                btn.classList.remove('loading');
-                btn.textContent = 'Sign in';
+                loginBtn.classList.remove('loading');
+                loginBtn.textContent = 'Sign in';
+            }
+        });
+
+        // ============================================
+        // ===== إنشاء حساب جديد (Sign Up) =====
+        // ============================================
+        signupForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const name = signupName.value.trim();
+            const email = signupEmail.value.trim();
+            const password = signupPassword.value;
+            const confirm = signupConfirm.value;
+
+            // 1. التحقق من صحة البيانات
+            if (!name || !email || !password || !confirm) {
+                alert('Please fill all fields');
+                return;
+            }
+
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters');
+                return;
+            }
+
+            if (password !== confirm) {
+                alert('Passwords do not match');
+                return;
+            }
+
+            // 2. إظهار تأثير التحميل
+            signupSubmitBtn.classList.add('loading');
+            signupSubmitBtn.textContent = 'Creating...';
+
+            try {
+                // 3. إنشاء المستخدم في Firebase
+                const userCredential = await window.auth.createUserWithEmailAndPassword(email, password);
+                const user = userCredential.user;
+
+                // 4. تحديث اسم المستخدم في Firebase Auth (displayName)
+                await user.updateProfile({
+                    displayName: name
+                });
+
+                // 5. حفظ اسم المستخدم في localStorage
+                localStorage.setItem('userName', name);
+                localStorage.setItem('userEmail', email);
+
+                console.log('✅ User created:', email);
+
+                // 6. إغلاق الـ Modal
+                closeModal();
+
+                // 7. رسالة نجاح
+                alert('✅ Account created successfully!');
+
+                // 8. الانتقال إلى Dashboard
+                window.location.href = 'web.html';
+
+            } catch (error) {
+                console.error('❌ Signup error:', error);
+                alert('❌ Signup failed: ' + error.message);
+                signupSubmitBtn.classList.remove('loading');
+                signupSubmitBtn.innerHTML = '<i class="fas fa-user-plus"></i> Create Account';
             }
         });
     </script>
