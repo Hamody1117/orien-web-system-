@@ -33,7 +33,7 @@
     <button id="scrollToTop" class="scroll-top"><i class="fas fa-arrow-up"></i></button>
 
     <div class="dashboard">
-        <!-- Sidebar -->
+        <!-- ===== Sidebar ===== -->
         <aside class="sidebar" id="sidebar">
             <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-chevron-left"></i></button>
             <div class="sidebar-header">
@@ -42,26 +42,51 @@
             </div>
             <nav class="sidebar-nav">
                 <ul>
-                    <li class="nav-item active" data-section="dashboard"><a href="#dashboard"><i class="fas fa-th-large"></i><span class="nav-text">Dashboard</span><span class="badge" id="dashboard-badge">0</span></a></li>
-                    <li class="nav-item" data-section="backlog"><a href="#backlog"><i class="fas fa-list-ul"></i><span class="nav-text">Backlog</span><span class="badge" id="backlog-badge">0</span></a></li>
-                    <li class="nav-item" data-section="sprints"><a href="#sprints"><i class="fas fa-rocket"></i><span class="nav-text">Sprints</span><span class="badge" id="sprints-badge">0</span></a></li>
-                    <li class="nav-item" data-section="board"><a href="#board"><i class="fas fa-columns"></i><span class="nav-text">Board</span></a></li>
-                    <li class="nav-item" data-section="tasks"><a href="#tasks"><i class="fas fa-tasks"></i><span class="nav-text">Tasks</span><span class="badge" id="tasks-badge">0</span></a></li>
-                    <li class="nav-item" data-section="calendar"><a href="#calendar"><i class="fas fa-calendar-alt"></i><span class="nav-text">Calendar</span></a></li>
-                    <li class="nav-item" data-section="reports"><a href="#reports"><i class="fas fa-chart-bar"></i><span class="nav-text">Reports</span></a></li>
-                    <li class="nav-item" data-section="team"><a href="#team"><i class="fas fa-users"></i><span class="nav-text">Team</span></a></li>
-                    <li class="nav-item" data-section="documents"><a href="#documents"><i class="fas fa-file-alt"></i><span class="nav-text">Documents</span></a></li>
+                    <li class="nav-item active" data-section="dashboard">
+                        <a href="#dashboard"><i class="fas fa-th-large"></i><span class="nav-text">Dashboard</span><span class="badge" id="dashboard-badge">0</span></a>
+                    </li>
+                    <li class="nav-item" data-section="projects">
+                        <a href="#projects"><i class="fas fa-folder"></i><span class="nav-text">Projects</span><span class="badge" id="projects-badge">0</span></a>
+                    </li>
+                    <li class="nav-item" data-section="backlog">
+                        <a href="#backlog"><i class="fas fa-list-ul"></i><span class="nav-text">Backlog</span><span class="badge" id="backlog-badge">0</span></a>
+                    </li>
+                    <li class="nav-item" data-section="sprints">
+                        <a href="#sprints"><i class="fas fa-rocket"></i><span class="nav-text">Sprints</span><span class="badge" id="sprints-badge">0</span></a>
+                    </li>
+                    <li class="nav-item" data-section="board">
+                        <a href="#board"><i class="fas fa-columns"></i><span class="nav-text">Board</span></a>
+                    </li>
+                    <li class="nav-item" data-section="tasks">
+                        <a href="#tasks"><i class="fas fa-tasks"></i><span class="nav-text">Tasks</span><span class="badge" id="tasks-badge">0</span></a>
+                    </li>
+                    <li class="nav-item" data-section="calendar">
+                        <a href="#calendar"><i class="fas fa-calendar-alt"></i><span class="nav-text">Calendar</span></a>
+                    </li>
+                    <li class="nav-item" data-section="reports">
+                        <a href="#reports"><i class="fas fa-chart-bar"></i><span class="nav-text">Reports</span></a>
+                    </li>
+                    <li class="nav-item" data-section="team">
+                        <a href="#team"><i class="fas fa-users"></i><span class="nav-text">Team</span></a>
+                    </li>
+                    <li class="nav-item" data-section="documents">
+                        <a href="#documents"><i class="fas fa-file-alt"></i><span class="nav-text">Documents</span></a>
+                    </li>
                 </ul>
                 <ul class="sidebar-bottom">
-                    <li class="nav-item" data-section="settings"><a href="#settings"><i class="fas fa-cog"></i><span class="nav-text">Settings</span></a></li>
-                    <li class="nav-item" id="logoutBtn"><a href="#"><i class="fas fa-sign-out-alt"></i><span class="nav-text">Logout</span></a></li>
+                    <li class="nav-item" data-section="settings">
+                        <a href="#settings"><i class="fas fa-cog"></i><span class="nav-text">Settings</span></a>
+                    </li>
+                    <li class="nav-item" id="logoutBtn">
+                        <a href="#"><i class="fas fa-sign-out-alt"></i><span class="nav-text">Logout</span></a>
+                    </li>
                 </ul>
             </nav>
         </aside>
 
-        <!-- Main Content -->
+        <!-- ===== Main Content ===== -->
         <main class="main-content">
-            <!-- Header -->
+            <!-- ===== Header ===== -->
             <header class="header">
                 <div class="header-left">
                     <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
@@ -85,119 +110,649 @@
                     </div>
                 </div>
             </header>
-                    <!-- ===== PROJECTS ===== -->
-<section id="projects-section" class="page-section">
-    <div class="section-header">
-        <h2>Projects</h2>
-        <button class="btn-primary" id="addProjectBtn">
-            <i class="fas fa-plus"></i> New Project
-        </button>
-    </div>
-    <div class="projects-grid" id="projects-grid">
-        <p class="empty-message">No projects yet</p>
-    </div>
-</section>
-            <div class="content">
-                <!-- ===== DASHBOARD ===== -->
-                <section id="dashboard-section" class="page-section active">
-                    <!-- Welcome Banner -->
-                    <div class="welcome-banner">
-                        <div class="banner-content">
-                            <h1>Agile Dashboard</h1>
-                            <p>Overview of your project and team progress</p>
-                        </div>
-                    </div>
 
-                    <!-- Stats Cards -->
+            <!-- ===== Content Sections ===== -->
+            <div class="content">
+    <!-- ===== DASHBOARD ===== -->
+<section id="dashboard-section" class="page-section active">
+    <!-- Welcome Banner مع أنيميشن قديم -->
+    <div class="welcome-banner">
+        <div class="banner-content">
+            <h2>Welcome back, <span class="user-name-display">User</span>! 👋</h2>
+            <p>Here's what's happening with your projects today.</p>
+        </div>
+        <div class="banner-actions">
+            <button class="btn-primary" id="createTaskBtn"><i class="fas fa-plus"></i> New Task</button>
+            <button class="btn-secondary" id="createProjectBtn"><i class="fas fa-folder-plus"></i> New Project</button>
+        </div>
+    </div>
+
+                    <!-- ===== Stats Cards (محدثة) ===== -->
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="stat-icon blue"><i class="fas fa-tasks"></i></div>
+                            <div class="stat-icon blue"><i class="fas fa-folder"></i></div>
                             <div class="stat-info">
-                                <span class="stat-label">Total Tasks</span>
-                                <span class="stat-value" id="total-tasks">0</span>
+                                <span class="stat-label">Total Projects</span>
+                                <span class="stat-value" id="total-projects">0</span>
                             </div>
                             <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 12%</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+                            <div class="stat-icon purple"><i class="fas fa-tasks"></i></div>
                             <div class="stat-info">
-                                <span class="stat-label">Completed</span>
+                                <span class="stat-label">Total Tasks</span>
+                                <span class="stat-value" id="total-tasks">0</span>
+                            </div>
+                            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 8%</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon green"><i class="fas fa-rocket"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Active Sprints</span>
+                                <span class="stat-value" id="active-sprints">0</span>
+                            </div>
+                            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 5%</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon yellow"><i class="fas fa-check-circle"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Completed Tasks</span>
                                 <span class="stat-value" id="completed-tasks">0</span>
                             </div>
-                            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 67%</div>
+                            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 15%</div>
                         </div>
+                        <!-- جديد: Team Velocity -->
                         <div class="stat-card">
-                            <div class="stat-icon yellow"><i class="fas fa-clock"></i></div>
+                            <div class="stat-icon orange"><i class="fas fa-users"></i></div>
                             <div class="stat-info">
-                                <span class="stat-label">In Progress</span>
-                                <span class="stat-value" id="inprogress-tasks">0</span>
+                                <span class="stat-label">Team Velocity</span>
+                                <span class="stat-value" id="team-velocity">0</span>
                             </div>
-                            <div class="stat-trend down"><i class="fas fa-arrow-down"></i> 22%</div>
+                            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 6%</div>
                         </div>
+                        <!-- جديد: Completion Rate -->
                         <div class="stat-card">
-                            <div class="stat-icon purple"><i class="fas fa-hourglass-half"></i></div>
+                            <div class="stat-icon teal"><i class="fas fa-percentage"></i></div>
                             <div class="stat-info">
-                                <span class="stat-label">To Do</span>
-                                <span class="stat-value" id="todo-tasks">0</span>
+                                <span class="stat-label">Completion Rate</span>
+                                <span class="stat-value" id="completion-rate">0%</span>
                             </div>
-                            <div class="stat-trend down"><i class="fas fa-arrow-down"></i> 11%</div>
+                            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 4%</div>
                         </div>
                     </div>
 
-                    <!-- Charts Row -->
-                    <div class="charts-row">
-                        <div class="chart-card">
-                            <h3>Sprint Burndown</h3>
-                            <div class="chart-container">
-                                <canvas id="burndownChart"></canvas>
-                            </div>
+                    <!-- ===== Recent Projects ===== -->
+                    <div class="recent-projects">
+                        <div class="section-header">
+                            <h3>Recent Projects</h3>
+                            <button class="btn-text" onclick="switchTab('projects')">View All <i class="fas fa-arrow-right"></i></button>
                         </div>
-                        <div class="chart-card">
-                            <h3>Tasks by Status</h3>
-                            <div class="chart-container">
-                                <canvas id="statusChart"></canvas>
-                            </div>
+                        <div class="projects-mini-grid" id="projects-mini-grid">
+                            <p class="empty-message">No projects yet</p>
                         </div>
                     </div>
 
-                    <!-- Sprint & Board -->
-                    <div class="sprint-board-row">
-                        <!-- Current Sprint -->
-                        <div class="sprint-card">
-                            <h3>Current Sprint</h3>
-                            <div id="current-sprint-container">
-                                <p class="empty-message">No active sprint</p>
-                            </div>
+                    <!-- ===== Recent Tasks ===== -->
+                    <div class="recent-tasks">
+                        <div class="section-header">
+                            <h3>Recent Tasks</h3>
+                            <button class="btn-text" onclick="switchTab('tasks')">View All <i class="fas fa-arrow-right"></i></button>
                         </div>
+                        <div class="recent-tasks-list" id="recent-tasks-list">
+                            <p class="empty-message">No tasks yet</p>
+                        </div>
+                    </div>
+                </section>
+                <!-- ===== Labels / Tags ===== -->
+<div class="form-group">
+    <label for="taskLabels">Labels / Tags</label>
+    <div class="tags-container" id="tagsContainer">
+        <!-- tags will be added here -->
+    </div>
+    <div class="tags-input-wrapper">
+        <input type="text" id="taskTagInput" placeholder="Add tag..." class="tag-input">
+        <button type="button" id="addTagBtn" class="btn-tag"><i class="fas fa-plus"></i></button>
+    </div>
+    <div class="tag-suggestions" id="tagSuggestions">
+        <span class="tag-suggestion" data-tag="Bug">Bug</span>
+        <span class="tag-suggestion" data-tag="Feature">Feature</span>
+        <span class="tag-suggestion" data-tag="UI">UI</span>
+        <span class="tag-suggestion" data-tag="Backend">Backend</span>
+        <span class="tag-suggestion" data-tag="Documentation">Documentation</span>
+        <span class="tag-suggestion" data-tag="Testing">Testing</span>
+    </div>
+</div>
+                
 
-                        <!-- Mini Board -->
-                        <div class="mini-board">
-                            <h3>Board Overview</h3>
-                            <div class="mini-board-columns">
-                                <div class="mini-col">
-                                    <h4>To Do <span class="count" id="todo-count">0</span></h4>
-                                    <div id="mini-todo"></div>
-                                </div>
-                                <div class="mini-col">
-                                    <h4>In Progress <span class="count" id="progress-count">0</span></h4>
-                                    <div id="mini-progress"></div>
-                                </div>
-                                <div class="mini-col">
-                                    <h4>Review <span class="count" id="review-count">0</span></h4>
-                                    <div id="mini-review"></div>
-                                </div>
-                                <div class="mini-col">
-                                    <h4>Done <span class="count" id="done-count">0</span></h4>
-                                    <div id="mini-done"></div>
-                                </div>
+                <!-- ========================================================== -->
+                <!-- ===== PROJECTS ===== -->
+                <!-- ========================================================== -->
+                <section id="projects-section" class="page-section">
+                    <div class="section-header">
+                        <h2>Projects</h2>
+                        <button class="btn-primary" id="addProjectBtn"><i class="fas fa-plus"></i> New Project</button>
+                    </div>
+                    <div class="projects-filters">
+                        <button class="filter-btn active" data-project-filter="all">All</button>
+                        <button class="filter-btn" data-project-filter="active">Active</button>
+                        <button class="filter-btn" data-project-filter="on-hold">On Hold</button>
+                        <button class="filter-btn" data-project-filter="completed">Completed</button>
+                        <button class="filter-btn" data-project-filter="archived">Archived</button>
+                    </div>
+                    <div class="projects-grid" id="projects-grid">
+                        <p class="empty-message">No projects yet. Create your first project!</p>
+                    </div>
+                </section>
+
+                <!-- ========================================================== -->
+                <!-- ===== BACKLOG ===== -->
+                <!-- ========================================================== -->
+                <!-- ========================================================== -->
+<!-- ===== BACKLOG (محدث) ===== -->
+<!-- ========================================================== -->
+<section id="backlog-section" class="page-section">
+    <div class="section-header">
+        <h2>Backlog</h2>
+        <div class="header-actions">
+            <button class="btn-primary" id="addTaskBtn"><i class="fas fa-plus"></i> Add Task</button>
+        </div>
+    </div>
+
+    <!-- ✅ فلترة وبحث -->
+    <div class="backlog-toolbar">
+        <div class="backlog-search">
+            <i class="fas fa-search"></i>
+            <input type="text" id="backlogSearch" placeholder="Search tasks...">
+        </div>
+        <div class="backlog-filters">
+            <button class="filter-btn active" data-backlog-filter="all">All</button>
+            <button class="filter-btn" data-backlog-filter="high">🔴 High</button>
+            <button class="filter-btn" data-backlog-filter="medium">🟡 Medium</button>
+            <button class="filter-btn" data-backlog-filter="low">🟢 Low</button>
+        </div>
+    </div>
+
+    <!-- ✅ إحصائيات -->
+    <div class="backlog-stats" id="backlog-stats">
+        <span><i class="fas fa-list-ul"></i> <span id="backlog-total">0</span> items</span>
+        <span><i class="fas fa-exclamation-triangle"></i> <span id="backlog-high-count">0</span> high priority</span>
+        <span><i class="fas fa-clock"></i> <span id="backlog-overdue">0</span> overdue</span>
+    </div>
+
+    <!-- ✅ قائمة المهام -->
+    <div class="backlog-list" id="backlog-list">
+        <p class="empty-message">No backlog items</p>
+    </div>
+</section>
+
+                <!-- ========================================================== -->
+                <!-- ===== SPRINTS ===== -->
+                <!-- ========================================================== -->
+                <section id="sprints-section" class="page-section">
+                    <div class="section-header">
+                        <h2>Sprints</h2>
+                        <button class="btn-primary" id="addSprintBtn"><i class="fas fa-plus"></i> New Sprint</button>
+                    </div>
+                    <div class="sprints-container" id="sprints-container">
+                        <p class="empty-message">No sprints yet</p>
+                    </div>
+                </section>
+
+                <!-- ========================================================== -->
+                <!-- ===== BOARD ===== -->
+                <!-- ========================================================== -->
+                <section id="board-section" class="page-section">
+                    <div class="section-header">
+                        <h2>Kanban Board</h2>
+                        <button class="btn-primary" id="boardAddBtn"><i class="fas fa-plus"></i> Add Task</button>
+                    </div>
+                    <div class="kanban-board">
+                        <div class="board-column" data-status="todo">
+                            <div class="column-header">
+                                <h4><span class="dot todo"></span> To Do <span class="task-count" id="board-todo-count">0</span></h4>
+                            </div>
+                            <div class="column-content" id="board-todo"></div>
+                        </div>
+                        <div class="board-column" data-status="progress">
+                            <div class="column-header">
+                                <h4><span class="dot progress"></span> In Progress <span class="task-count" id="board-progress-count">0</span></h4>
+                            </div>
+                            <div class="column-content" id="board-progress"></div>
+                        </div>
+                        <div class="board-column" data-status="review">
+                            <div class="column-header">
+                                <h4><span class="dot review"></span> Review <span class="task-count" id="board-review-count">0</span></h4>
+                            </div>
+                            <div class="column-content" id="board-review"></div>
+                        </div>
+                        <div class="board-column" data-status="done">
+                            <div class="column-header">
+                                <h4><span class="dot done"></span> Done <span class="task-count" id="board-done-count">0</span></h4>
+                            </div>
+                            <div class="column-content" id="board-done"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================================== -->
+                <!-- ===== TASKS ===== -->
+                <!-- ========================================================== -->
+                <section id="tasks-section" class="page-section">
+                    <div class="section-header">
+                        <h2>Tasks</h2>
+                        <button class="btn-primary" id="tasksAddBtn"><i class="fas fa-plus"></i> New Task</button>
+                    </div>
+                    <div class="tasks-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="todo">To Do</button>
+                        <button class="filter-btn" data-filter="progress">In Progress</button>
+                        <button class="filter-btn" data-filter="review">Review</button>
+                        <button class="filter-btn" data-filter="done">Done</button>
+                    </div>
+                    <div class="tasks-list" id="tasks-list">
+                        <p class="empty-message">No tasks yet</p>
+                    </div>
+                </section>
+
+                <!-- ========================================================== -->
+                <!-- ===== CALENDAR ===== -->
+                <!-- ========================================================== -->
+                <section id="calendar-section" class="page-section">
+                    <div class="section-header">
+                        <h2>Calendar</h2>
+                    </div>
+                    <div class="calendar-placeholder">
+                        <i class="fas fa-calendar-alt"></i>
+                        <p>Calendar view coming soon</p>
+                    </div>
+                </section>
+
+                <!-- ========================================================== -->
+                <!-- ===== REPORTS ===== -->
+                <!-- ========================================================== -->
+                <section id="reports-section" class="page-section">
+                    <div class="section-header">
+                        <h2>Reports & Analytics</h2>
+                    </div>
+                    <div class="reports-grid">
+                        <div class="report-card">
+                            <h3>Task Distribution</h3>
+                            <div class="chart-container"><canvas id="reportDistChart"></canvas></div>
+                        </div>
+                        <div class="report-card">
+                            <h3>Completion Rate</h3>
+                            <div class="chart-container"><canvas id="reportRateChart"></canvas></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================================== -->
+                <!-- ===== TEAM ===== -->
+                <!-- ========================================================== -->
+                <section id="team-section" class="page-section">
+                    <div class="section-header">
+                        <h2>Team</h2>
+                        <button class="btn-primary"><i class="fas fa-user-plus"></i> Add Member</button>
+                    </div>
+                    <div class="team-grid" id="team-grid">
+                        <div class="team-card">
+                            <img src="https://ui-avatars.com/api/?name=User&background=2563eb&color=fff" alt="User">
+                            <h4>User</h4>
+                            <p>Team Admin</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================================== -->
+                <!-- ===== DOCUMENTS ===== -->
+                <!-- ========================================================== -->
+                <section id="documents-section" class="page-section">
+                    <div class="section-header">
+                        <h2>Documents</h2>
+                        <button class="btn-primary"><i class="fas fa-upload"></i> Upload</button>
+                    </div>
+                    <div class="documents-grid">
+                        <p class="empty-message">No documents yet</p>
+                    </div>
+                </section>
+
+                <!-- ========================================================== -->
+                <!-- ===== SETTINGS ===== -->
+                <!-- ========================================================== -->
+                <section id="settings-section" class="page-section">
+                    <div class="section-header">
+                        <h2>Settings</h2>
+                    </div>
+                    <div class="settings-container">
+                        <div class="settings-group">
+                            <h3>Appearance</h3>
+                            <div class="setting-item">
+                                <label for="themeSelect">Theme</label>
+                                <select id="themeSelect">
+                                    <option value="light">☀️ Light</option>
+                                    <option value="dark">🌙 Dark</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                 </section>
-                
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== PROJECT MODAL ===== -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="projectModalTitle">Create New Project</h3>
+                <button class="close-btn" id="closeProjectModal"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="projectForm">
+                <input type="hidden" id="projectId">
+                <div class="form-group">
+                    <label for="projectName">Project Name</label>
+                    <input type="text" id="projectName" placeholder="e.g., Website Redesign" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectDescription">Description</label>
+                    <textarea id="projectDescription" rows="3" placeholder="Describe the project..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="projectStatus">Status</label>
+                    <select id="projectStatus">
+                        <option value="active">Active</option>
+                        <option value="on-hold">On Hold</option>
+                        <option value="completed">Completed</option>
+                        <option value="archived">Archived</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelProjectModal">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== TASK MODAL ===== -->
+    <div class="modal" id="taskModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="taskModalTitle">Create New Task</h3>
+                <button class="close-btn" id="closeTaskModal"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="taskForm">
+                <input type="hidden" id="taskId">
+                <div class="form-group">
+                    <label for="taskTitle">Task Title</label>
+                    <input type="text" id="taskTitle" placeholder="e.g., Implement authentication" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskDescription">Description</label>
+                    <textarea id="taskDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="taskProject">Project</label>
+                    <select id="taskProject"><option value="">Select Project</option></select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="taskStatus">Status</label>
+                        <select id="taskStatus">
+                            <option value="todo">To Do</option>
+                            <option value="progress">In Progress</option>
+                            <option value="review">Review</option>
+                            <option value="done">Done</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskPriority">Priority</label>
+                        <select id="taskPriority">
+                            <option value="high">High</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="taskAssignee">Assign to</label>
+                    <select id="taskAssignee">
+                        <option value="John Doe">John Doe</option>
+                        <option value="Jane Smith">Jane Smith</option>
+                        <option value="Mike Johnson">Mike Johnson</option>
+                        <option value="Sara Ahmed">Sara Ahmed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="taskDueDate">Due Date</label>
+                    <input type="date" id="taskDueDate">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelTaskModal">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== SPRINT MODAL ===== -->
+    <div class="modal" id="sprintModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="sprintModalTitle">Create New Sprint</h3>
+                <button class="close-btn" id="closeSprintModal"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="sprintForm">
+                <input type="hidden" id="sprintId">
+                <div class="form-group">
+                    <label for="sprintName">Sprint Name</label>
+                    <input type="text" id="sprintName" placeholder="e.g., Sprint 24" required>
+                </div>
+                <div class="form-group">
+                    <label for="sprintGoal">Sprint Goal</label>
+                    <input type="text" id="sprintGoal" placeholder="e.g., Complete authentication">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sprintStartDate">Start Date</label>
+                        <input type="date" id="sprintStartDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sprintEndDate">End Date</label>
+                        <input type="date" id="sprintEndDate" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sprintProject">Project</label>
+                    <select id="sprintProject"><option value="">Select Project</option></select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelSprintModal">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Sprint</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== DELETE MODAL ===== -->
+    <div class="modal small-modal" id="deleteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Delete Item</h3>
+                <button class="close-btn" id="closeDeleteModal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this item?</p>
+                <p class="text-muted" id="deleteItemTitle"></p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="cancelDelete">Cancel</button>
+                <button class="btn-danger" id="confirmDelete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== OVERLAY ===== -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="web.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orien · Agile Dashboard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="web.css">
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore-compat.js"></script>
+    
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBFV2NXxa0QHCld-KXjfkapL7AuC6RFnec",
+            authDomain: "orien-7c882.firebaseapp.com",
+            projectId: "orien-7c882",
+            storageBucket: "orien-7c882.firebasestorage.app",
+            messagingSenderId: "763247960140",
+            appId: "1:763247960140:web:2ef083fa1e1f9b7fdad4e9"
+        };
+        firebase.initializeApp(firebaseConfig);
+        window.auth = firebase.auth();
+        window.db = firebase.firestore();
+        console.log('🔥 Firebase ready');
+    </script>
+</head>
+<body>
+    <button id="scrollToTop" class="scroll-top"><i class="fas fa-arrow-up"></i></button>
+
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-chevron-left"></i></button>
+            <div class="sidebar-header">
+                <h1 class="logo">Orien</h1>
+                <span class="version">v3.0</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-section="dashboard"><a href="#dashboard"><i class="fas fa-th-large"></i><span class="nav-text">Dashboard</span><span class="badge" id="dashboard-badge">0</span></a></li>
+                    <li class="nav-item" data-section="projects"><a href="#projects"><i class="fas fa-folder"></i><span class="nav-text">Projects</span><span class="badge" id="projects-badge">0</span></a></li>
+                    <li class="nav-item" data-section="backlog"><a href="#backlog"><i class="fas fa-list-ul"></i><span class="nav-text">Backlog</span><span class="badge" id="backlog-badge">0</span></a></li>
+                    <li class="nav-item" data-section="sprints"><a href="#sprints"><i class="fas fa-rocket"></i><span class="nav-text">Sprints</span><span class="badge" id="sprints-badge">0</span></a></li>
+                    <li class="nav-item" data-section="board"><a href="#board"><i class="fas fa-columns"></i><span class="nav-text">Board</span></a></li>
+                    <li class="nav-item" data-section="tasks"><a href="#tasks"><i class="fas fa-tasks"></i><span class="nav-text">Tasks</span><span class="badge" id="tasks-badge">0</span></a></li>
+                    <li class="nav-item" data-section="calendar"><a href="#calendar"><i class="fas fa-calendar-alt"></i><span class="nav-text">Calendar</span></a></li>
+                    <li class="nav-item" data-section="reports"><a href="#reports"><i class="fas fa-chart-bar"></i><span class="nav-text">Reports</span></a></li>
+                    <li class="nav-item" data-section="team"><a href="#team"><i class="fas fa-users"></i><span class="nav-text">Team</span></a></li>
+                    <li class="nav-item" data-section="documents"><a href="#documents"><i class="fas fa-file-alt"></i><span class="nav-text">Documents</span></a></li>
+                </ul>
+                <ul class="sidebar-bottom">
+                    <li class="nav-item" data-section="settings"><a href="#settings"><i class="fas fa-cog"></i><span class="nav-text">Settings</span></a></li>
+                    <li class="nav-item" id="logoutBtn"><a href="#"><i class="fas fa-sign-out-alt"></i><span class="nav-text">Logout</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+                    <div class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Search..." id="globalSearch"><span class="search-hint">⌘K</span></div>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                    <div class="notifications"><button class="notification-btn"><i class="fas fa-bell"></i><span class="notification-badge" id="notificationBadge">0</span></button></div>
+                    <div class="user-menu">
+                        <div class="avatar"><img src="https://ui-avatars.com/api/?name=User&background=2563eb&color=fff" alt="User" id="userAvatar"></div>
+                        <div class="user-info"><span class="user-name" id="userNameDisplay">User</span><span class="user-role">Team Admin</span></div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Sections -->
+            <div class="content">
+                <!-- ===== DASHBOARD ===== -->
+                <section id="dashboard-section" class="page-section active">
+                    <div class="welcome-banner">
+                        <div class="banner-content">
+                            <div class="banner-greeting">
+                                <span class="greeting-icon">👋</span>
+                                <div>
+                                    <h2>Welcome back, <span class="user-name-display">User</span>!</h2>
+                                    <p>Here's what's happening with your projects today.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner-actions">
+                            <button class="btn-primary" id="createTaskBtn"><i class="fas fa-plus"></i> New Task</button>
+                            <button class="btn-secondary" id="createProjectBtn"><i class="fas fa-folder-plus"></i> New Project</button>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card"><div class="stat-icon blue"><i class="fas fa-folder"></i></div><div class="stat-info"><span class="stat-label">Total Projects</span><span class="stat-value" id="total-projects">0</span></div><div class="stat-trend up"><i class="fas fa-arrow-up"></i> 12%</div></div>
+                        <div class="stat-card"><div class="stat-icon purple"><i class="fas fa-tasks"></i></div><div class="stat-info"><span class="stat-label">Total Tasks</span><span class="stat-value" id="total-tasks">0</span></div><div class="stat-trend up"><i class="fas fa-arrow-up"></i> 8%</div></div>
+                        <div class="stat-card"><div class="stat-icon green"><i class="fas fa-rocket"></i></div><div class="stat-info"><span class="stat-label">Active Sprints</span><span class="stat-value" id="active-sprints">0</span></div><div class="stat-trend up"><i class="fas fa-arrow-up"></i> 5%</div></div>
+                        <div class="stat-card"><div class="stat-icon yellow"><i class="fas fa-check-circle"></i></div><div class="stat-info"><span class="stat-label">Completed Tasks</span><span class="stat-value" id="completed-tasks">0</span></div><div class="stat-trend up"><i class="fas fa-arrow-up"></i> 15%</div></div>
+                        <div class="stat-card"><div class="stat-icon orange"><i class="fas fa-users"></i></div><div class="stat-info"><span class="stat-label">Team Velocity</span><span class="stat-value" id="team-velocity">0</span></div><div class="stat-trend up"><i class="fas fa-arrow-up"></i> 6%</div></div>
+                        <div class="stat-card"><div class="stat-icon teal"><i class="fas fa-percentage"></i></div><div class="stat-info"><span class="stat-label">Completion Rate</span><span class="stat-value" id="completion-rate">0%</span></div><div class="stat-trend up"><i class="fas fa-arrow-up"></i> 4%</div></div>
+                    </div>
+
+                    <div class="recent-projects">
+                        <div class="section-header"><h3>Recent Projects</h3><button class="btn-text" onclick="switchTab('projects')">View All <i class="fas fa-arrow-right"></i></button></div>
+                        <div class="projects-mini-grid" id="projects-mini-grid"><p class="empty-message">No projects yet</p></div>
+                    </div>
+
+                    <div class="recent-tasks">
+                        <div class="section-header"><h3>Recent Tasks</h3><button class="btn-text" onclick="switchTab('tasks')">View All <i class="fas fa-arrow-right"></i></button></div>
+                        <div class="recent-tasks-list" id="recent-tasks-list"><p class="empty-message">No tasks yet</p></div>
+                    </div>
+
+                    <div class="team-overview">
+                        <div class="section-header"><h3>Team Overview</h3><button class="btn-text" onclick="switchTab('team')">View All <i class="fas fa-arrow-right"></i></button></div>
+                        <div class="team-mini-grid" id="team-mini-grid"><p class="empty-message">No team members yet</p></div>
+                    </div>
+                </section>
+
+                <!-- ===== PROJECTS ===== -->
+                <section id="projects-section" class="page-section">
+                    <div class="section-header"><h2>Projects</h2><button class="btn-primary" id="addProjectBtn"><i class="fas fa-plus"></i> New Project</button></div>
+                    <div class="projects-filters">
+                        <button class="filter-btn active" data-project-filter="all">All</button>
+                        <button class="filter-btn" data-project-filter="active">Active</button>
+                        <button class="filter-btn" data-project-filter="on-hold">On Hold</button>
+                        <button class="filter-btn" data-project-filter="completed">Completed</button>
+                        <button class="filter-btn" data-project-filter="archived">Archived</button>
+                    </div>
+                    <div class="projects-grid" id="projects-grid"><p class="empty-message">No projects yet</p></div>
+                </section>
+
                 <!-- ===== BACKLOG ===== -->
                 <section id="backlog-section" class="page-section">
                     <div class="section-header"><h2>Backlog</h2><button class="btn-primary" id="addTaskBtn"><i class="fas fa-plus"></i> Add Task</button></div>
+                    <div class="backlog-toolbar">
+                        <div class="backlog-search"><i class="fas fa-search"></i><input type="text" id="backlogSearch" placeholder="Search tasks..."></div>
+                        <div class="backlog-filters">
+                            <button class="filter-btn active" data-backlog-filter="all">All</button>
+                            <button class="filter-btn" data-backlog-filter="high">🔴 High</button>
+                            <button class="filter-btn" data-backlog-filter="medium">🟡 Medium</button>
+                            <button class="filter-btn" data-backlog-filter="low">🟢 Low</button>
+                        </div>
+                    </div>
+                    <div class="backlog-stats">
+                        <span><i class="fas fa-list-ul"></i> <span id="backlog-total">0</span> items</span>
+                        <span><i class="fas fa-exclamation-triangle"></i> <span id="backlog-high-count">0</span> high priority</span>
+                        <span><i class="fas fa-clock"></i> <span id="backlog-overdue">0</span> overdue</span>
+                    </div>
                     <div class="backlog-list" id="backlog-list"><p class="empty-message">No backlog items</p></div>
                 </section>
 
@@ -239,7 +794,7 @@
 
                 <!-- ===== REPORTS ===== -->
                 <section id="reports-section" class="page-section">
-                    <div class="section-header"><h2>Reports</h2></div>
+                    <div class="section-header"><h2>Reports & Analytics</h2></div>
                     <div class="reports-grid">
                         <div class="report-card"><h3>Task Distribution</h3><div class="chart-container"><canvas id="reportDistChart"></canvas></div></div>
                         <div class="report-card"><h3>Completion Rate</h3><div class="chart-container"><canvas id="reportRateChart"></canvas></div></div>
@@ -250,7 +805,7 @@
                 <section id="team-section" class="page-section">
                     <div class="section-header"><h2>Team</h2><button class="btn-primary"><i class="fas fa-user-plus"></i> Add Member</button></div>
                     <div class="team-grid" id="team-grid">
-                        <div class="team-card"><img src="https://ui-avatars.com/api/?name=User&background=2563eb&color=fff"><h4>User</h4><p>Team Admin</p></div>
+                        <div class="team-card"><img src="https://ui-avatars.com/api/?name=User&background=2563eb&color=fff" alt="User"><h4>User</h4><p>Team Admin</p></div>
                     </div>
                 </section>
 
@@ -264,40 +819,70 @@
                 <section id="settings-section" class="page-section">
                     <div class="section-header"><h2>Settings</h2></div>
                     <div class="settings-container">
-                        <div class="settings-group"><h3>Appearance</h3><div class="setting-item"><label>Theme</label><select id="themeSelect"><option value="light">☀️ Light</option><option value="dark">🌙 Dark</option></select></div></div>
+                        <div class="settings-group"><h3>Appearance</h3><div class="setting-item"><label for="themeSelect">Theme</label><select id="themeSelect"><option value="light">☀️ Light</option><option value="dark">🌙 Dark</option></select></div></div>
                     </div>
                 </section>
-                
             </div>
         </main>
     </div>
 
-    <!-- Modals -->
-    <div class="modal" id="taskModal">
+    <!-- ===== MODALS ===== -->
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
         <div class="modal-content">
-            <div class="modal-header"><h3 id="taskModalTitle">New Task</h3><button class="close-btn" id="closeTaskModal"><i class="fas fa-times"></i></button></div>
-            <form id="taskForm">
-                <input type="hidden" id="taskId">
-                <div class="form-group"><label>Title</label><input type="text" id="taskTitle" required></div>
-                <div class="form-group"><label>Description</label><textarea id="taskDescription" rows="3"></textarea></div>
-                <div class="form-group"><label>Project</label><select id="taskProject"><option value="">Select Project</option></select></div>
-                <div class="form-row">
-                    <div class="form-group"><label>Status</label><select id="taskStatus"><option value="todo">To Do</option><option value="progress">In Progress</option><option value="review">Review</option><option value="done">Done</option></select></div>
-                    <div class="form-group"><label>Priority</label><select id="taskPriority"><option value="high">High</option><option value="medium" selected>Medium</option><option value="low">Low</option></select></div>
-                </div>
-                <div class="form-actions"><button type="button" class="btn-secondary" id="cancelTaskModal">Cancel</button><button type="submit" class="btn-primary">Save</button></div>
+            <div class="modal-header"><h3 id="projectModalTitle">Create New Project</h3><button class="close-btn" id="closeProjectModal"><i class="fas fa-times"></i></button></div>
+            <form id="projectForm">
+                <input type="hidden" id="projectId">
+                <div class="form-group"><label for="projectName">Project Name</label><input type="text" id="projectName" placeholder="e.g., Website Redesign" required></div>
+                <div class="form-group"><label for="projectDescription">Description</label><textarea id="projectDescription" rows="3"></textarea></div>
+                <div class="form-group"><label for="projectStatus">Status</label><select id="projectStatus"><option value="active">Active</option><option value="on-hold">On Hold</option><option value="completed">Completed</option><option value="archived">Archived</option></select></div>
+                <div class="form-actions"><button type="button" class="btn-secondary" id="cancelProjectModal">Cancel</button><button type="submit" class="btn-primary">Save Project</button></div>
             </form>
         </div>
     </div>
 
+    <!-- Task Modal -->
+    <div class="modal" id="taskModal">
+        <div class="modal-content">
+            <div class="modal-header"><h3 id="taskModalTitle">Create New Task</h3><button class="close-btn" id="closeTaskModal"><i class="fas fa-times"></i></button></div>
+            <form id="taskForm">
+                <input type="hidden" id="taskId">
+                <div class="form-group"><label for="taskTitle">Task Title</label><input type="text" id="taskTitle" placeholder="e.g., Implement authentication" required></div>
+                <div class="form-group"><label for="taskDescription">Description</label><textarea id="taskDescription" rows="3"></textarea></div>
+                <div class="form-group"><label for="taskProject">Project</label><select id="taskProject"><option value="">Select Project</option></select></div>
+                <div class="form-row"><div class="form-group"><label for="taskStatus">Status</label><select id="taskStatus"><option value="todo">To Do</option><option value="progress">In Progress</option><option value="review">Review</option><option value="done">Done</option></select></div><div class="form-group"><label for="taskPriority">Priority</label><select id="taskPriority"><option value="high">High</option><option value="medium" selected>Medium</option><option value="low">Low</option></select></div></div>
+                <div class="form-group"><label for="taskAssignee">Assign to</label><select id="taskAssignee"><option value="John Doe">John Doe</option><option value="Jane Smith">Jane Smith</option><option value="Mike Johnson">Mike Johnson</option><option value="Sara Ahmed">Sara Ahmed</option></select></div>
+                <div class="form-group"><label for="taskDueDate">Due Date</label><input type="date" id="taskDueDate"></div>
+                <div class="form-actions"><button type="button" class="btn-secondary" id="cancelTaskModal">Cancel</button><button type="submit" class="btn-primary">Save Task</button></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sprint Modal -->
+    <div class="modal" id="sprintModal">
+        <div class="modal-content">
+            <div class="modal-header"><h3 id="sprintModalTitle">Create New Sprint</h3><button class="close-btn" id="closeSprintModal"><i class="fas fa-times"></i></button></div>
+            <form id="sprintForm">
+                <input type="hidden" id="sprintId">
+                <div class="form-group"><label for="sprintName">Sprint Name</label><input type="text" id="sprintName" placeholder="e.g., Sprint 24" required></div>
+                <div class="form-group"><label for="sprintGoal">Sprint Goal</label><input type="text" id="sprintGoal" placeholder="e.g., Complete authentication"></div>
+                <div class="form-row"><div class="form-group"><label for="sprintStartDate">Start Date</label><input type="date" id="sprintStartDate" required></div><div class="form-group"><label for="sprintEndDate">End Date</label><input type="date" id="sprintEndDate" required></div></div>
+                <div class="form-group"><label for="sprintProject">Project</label><select id="sprintProject"><option value="">Select Project</option></select></div>
+                <div class="form-actions"><button type="button" class="btn-secondary" id="cancelSprintModal">Cancel</button><button type="submit" class="btn-primary">Save Sprint</button></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
     <div class="modal small-modal" id="deleteModal">
         <div class="modal-content">
-            <div class="modal-header"><h3>Delete</h3><button class="close-btn" id="closeDeleteModal"><i class="fas fa-times"></i></button></div>
+            <div class="modal-header"><h3>Delete Item</h3><button class="close-btn" id="closeDeleteModal"><i class="fas fa-times"></i></button></div>
             <div class="modal-body"><p>Are you sure?</p><p class="text-muted" id="deleteItemTitle"></p></div>
             <div class="modal-actions"><button class="btn-secondary" id="cancelDelete">Cancel</button><button class="btn-danger" id="confirmDelete">Delete</button></div>
         </div>
     </div>
 
+    <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
